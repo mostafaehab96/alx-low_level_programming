@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -o main; ./main > c
+cat $CFILE  > c
