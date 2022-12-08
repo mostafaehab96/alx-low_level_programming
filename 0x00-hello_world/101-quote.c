@@ -9,6 +9,7 @@
 int main(void)
 {
 	char *text = " - Dora Korpar, 2015-10-19\n";
+
 	fprintf(stderr, "and that piece of art is useful\"%s", text);
 
 	return (1);
