@@ -11,6 +11,7 @@ int main(void)
 	int f1, f2, s1, s2;
 
 	f1 = 0;
+	s2 = 1;
 	while (f1 < 10)
 	{
 		f2 = 0;
@@ -19,7 +20,6 @@ int main(void)
 			s1 = f1;
 			while (s1 < 10)
 			{
-				s2 = f2 + 1;
 				while (s2 < 10)
 				{
 					putchar(f1 + '0');
@@ -36,8 +36,10 @@ int main(void)
 					s2++;
 				}
 				s1++;
+				s2 = 0;
 			}
 			f2++;
+			s2 = f2 + 1;
 		}
 		f1++;
 	}
