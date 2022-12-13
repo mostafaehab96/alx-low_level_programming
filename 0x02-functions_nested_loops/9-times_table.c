@@ -48,7 +48,6 @@ void times_table(void)
 			print_digits(i * j);
 			if (j == 9)
 			{
-				_putchar('$');
 				break;
 			}
 			_putchar(',');
