@@ -1,4 +1,4 @@
-#include "_putchar.h"
+#include "main.h"
 
 /**
  * main - Entry point of the program
@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char* word = "_putchar\n";
+	char *word = "_putchar\n";
 	int i;
 
 	for (i = 0; i < 10; i++)
