@@ -10,6 +10,7 @@ void print_digits(int n)
 	int tmp = n;
 	int digits = 0;
 	int zero_count = 0;
+	int i;
 
 	while (tmp > 0)
 	{
@@ -23,7 +24,7 @@ void print_digits(int n)
 		digits /= 10;
 	} while (digits > 0);
 
-	for (int i = 0; i < zero_count; i++)
+	for (i = 0; i < zero_count; i++)
 	{
 		_putchar('0');
 	}
