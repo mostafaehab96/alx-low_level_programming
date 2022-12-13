@@ -19,7 +19,7 @@ void print_two_digits(int n)
 		int last_digit = n % 10;
 		int first_digit = (n - last_digit) / 10;
 
-		_putchar(firt_digit + '0');
+		_putchar(first_digit + '0');
 		_putchar(last_digit + '0');
 	}
 }
