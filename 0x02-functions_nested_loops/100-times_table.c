@@ -14,6 +14,8 @@ int count_zeros(int n)
 
 	while (tmp % 10 == 0)
 	{
+		if (tmp == 0)
+			break;
 		count++;
 		tmp /= 10;
 	}
