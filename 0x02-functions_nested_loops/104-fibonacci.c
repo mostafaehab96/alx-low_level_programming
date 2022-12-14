@@ -30,7 +30,7 @@ int main(void)
 		first = second;
 		second = n;
 
-		printf("%.0lf", n);
+		printf("%.0f", n);
 
 		if (i < 97)
 			printf(", ");
