@@ -52,7 +52,7 @@ void print_times_table(int n)
 		for (j = 0; j <= n; j++)
 		{
 			print_digits(i * j);
-			if (j == n - 1)
+			if (j == n)
 			{
 				break;
 			}
