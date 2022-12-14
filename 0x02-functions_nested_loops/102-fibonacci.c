@@ -7,14 +7,12 @@
  * Return: the calculated fibonacci number
  */
 
-int fib(int n)
+long int fib(int n, long int *memory)
 {
-	if (n == 0)
-		return (1);
-	if (n == 1)
-		return (2);
+	if (memory[n] == 0)
+		memory[n] = fib(n - 1, memory) + fib(n - 2, memory);
 
-	return (fib(n - 1) + fib(n - 2));
+	return (memory[n]);
 }
 
 /**
@@ -26,10 +24,16 @@ int fib(int n)
 int main(void)
 {
 	int i;
+	long int memory[50] = {0};
+	
+	memory[0] = 1;
+	memory[1] = 2;
 
 	for (i = 0; i < 50; i++)
 	{
-		printf("%i, ", fib(i));
+		printf("%li", fib(i, memory));
+		if (i < 49)
+			printf(", ");
 	}
 
 	printf("\n");
