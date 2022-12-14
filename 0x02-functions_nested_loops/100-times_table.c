@@ -1,6 +1,27 @@
 #include "main.h"
 
 /**
+ * count_zeros - count trailing zeros in integer n
+ * @n: the number to count it's trailing zeros
+ *
+ * Return: the count of zeros
+ */
+
+int count_zeros(int n)
+{
+	int tmp = n;
+	int count = 0;
+
+	while (tmp % 10 == 0)
+	{
+		count++;
+		tmp /= 10;
+	}
+
+	return (count);
+}
+
+/**
  * print_digits - prints all digits of number n
  * @n: the number that will be printed
  */
@@ -9,14 +30,12 @@ void print_digits(int n)
 {
 	int tmp = n;
 	int digits = 0;
-	int zero_count = 0;
+	int zero_count = count_zeros(n);
 	int i;
 
 	while (tmp > 0)
 	{
 		digits = digits * 10 + (tmp % 10);
-		if (tmp % 10 == 0)
-			zero_count++;
 		tmp /= 10;
 	}
 	do {
