@@ -3,6 +3,7 @@
 /**
  * fib - calculate the fibonacci number in position n
  * @n: the position of fibonacci number is a sequence
+ * @memory: the cache to hold the previous fibonacci numbers
  *
  * Return: the calculated fibonacci number
  */
@@ -25,7 +26,7 @@ int main(void)
 {
 	int i;
 	long int memory[50] = {0};
-	
+
 	memory[0] = 1;
 	memory[1] = 2;
 
