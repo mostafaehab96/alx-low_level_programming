@@ -9,26 +9,24 @@ void print_digits(int n)
 {
 	int tmp = n;
 	int i = 0;
-	char numbers[10];
+	int j;
+	int numbers[10];
 
 	do {
-		numbers[i] = (tmp % 10) + '0';
+		numbers[i] = (tmp % 10);
 		tmp /= 10;
 		i++;
 	} while (tmp > 0);
 
-	int j;
-
-	for (j = i; j > 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
-		_putchar(numbers[j]);
+		_putchar(numbers[j] + '0');
 	}
 }
 
 /**
  * more_numbers - prints numbers from 0 to 14 10 times
  */
-
 
 void more_numbers(void)
 {
