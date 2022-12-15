@@ -11,7 +11,7 @@ int count_zeros(int n)
 {
 	int tmp = n;
 	int count = 0;
-	
+
 	while (tmp % 10 == 0)
 	{
 		if (tmp == 0)
@@ -34,7 +34,7 @@ void print_number(int n)
 	int digits = 0;
 	int zero_count = count_zeros(n);
 	int i;
-	
+
 	if (tmp < 0)
 	{
 		tmp = -tmp;
