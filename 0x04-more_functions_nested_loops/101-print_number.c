@@ -1,60 +1,59 @@
 #include "main.h"
+#include <math.h>
 
 /**
- * count_zeros - count trailing zeros in integer n
- * @n: the number to count it's trailing zeros
+ * count_digits - count number of digits in integer
+ * @n: number to be counted
  *
- * Return: the count of zeros
+ * Return: the count of digits
  */
 
-int count_zeros(int n)
+int count_digits(int n)
 {
-	int tmp = n;
 	int count = 0;
+	unsigned int tmp;
 
-	while (tmp % 10 == 0)
+	if (n < 0)
 	{
-		if (tmp == 0)
-			break;
+		tmp = -n;
+	}
+	else
+	{
+		tmp = n;
+	}
+	do {
 		count++;
 		tmp /= 10;
-	}
+	} while (tmp > 0);
 
 	return (count);
 }
 
 /**
- * print_number - prints all digits of number n
- * @n: the number that will be printed
+ * print_number - prints any integer using _putchar only
+ * @n: integer to be printed
  */
 
 void print_number(int n)
 {
-	int tmp = n;
-	int digits = 0;
-	int zero_count = count_zeros(n);
+	int count = count_digits(n);
 	int i;
+	int d;
+	unsigned int tmp;
 
-	if (tmp < 0)
+	if (n < 0)
 	{
-		tmp = -tmp;
 		_putchar('-');
+		tmp = -n;
 	}
-
-	while (tmp > 0)
+	else
 	{
-		digits = digits * 10 + (tmp % 10);
-		tmp /= 10;
+		tmp = n;
 	}
-	do {
-		_putchar(digits % 10 + '0');
-		digits /= 10;
-	} while (digits > 0);
 
-	for (i = 0; i < zero_count; i++)
+	for (i = count - 1; i >= 0; i--)
 	{
-		_putchar('0');
+		d = (tmp / (int) pow(10, i)) % 10;
+		_putchar(d + '0');
 	}
-
-
 }
