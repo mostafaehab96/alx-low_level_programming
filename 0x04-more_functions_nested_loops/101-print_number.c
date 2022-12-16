@@ -1,5 +1,26 @@
 #include "main.h"
-#include <math.h>
+
+/**
+ * pow_int - takes two integers and return power of first raised to second
+ * @x: first number (base)
+ * @y: second number (power)
+ *
+ * Return: the calculated power
+ */
+
+int pow_int(int x, int y)
+{
+	int i;
+	int result = 1;
+
+	for (i = 0; i < y; i++)
+	{
+		result *= x;
+	}
+
+	return (result);
+}
+
 
 /**
  * count_digits - count number of digits in integer
@@ -53,7 +74,7 @@ void print_number(int n)
 
 	for (i = count - 1; i >= 0; i--)
 	{
-		d = (tmp / (int) pow(10, i)) % 10;
+		d = (tmp / (int) pow_int(10, i)) % 10;
 		_putchar(d + '0');
 	}
 }
