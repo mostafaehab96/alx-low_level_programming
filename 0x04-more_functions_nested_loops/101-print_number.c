@@ -74,7 +74,7 @@ void print_number(int n)
 
 	for (i = count - 1; i >= 0; i--)
 	{
-		d = (tmp / (int) pow_int(10, i)) % 10;
+		d = (tmp / pow_int(10, i)) % 10;
 		_putchar(d + '0');
 	}
 }
