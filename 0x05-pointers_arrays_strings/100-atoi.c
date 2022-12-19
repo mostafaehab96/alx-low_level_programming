@@ -34,6 +34,6 @@ int _atoi(char *s)
 		i++;
 	}
 
-	return (result * negative);
+	return (result);
 
 }
