@@ -9,8 +9,7 @@
 void rev_string(char *s)
 {
 	int length = strlen(s);
-	const int x = length;
-	char copy[x];
+	char copy[500];
 	int i;
 	int j = 0;
 
