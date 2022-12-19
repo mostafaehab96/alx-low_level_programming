@@ -10,7 +10,7 @@ void rev_string(char *s)
 {
 	int length = strlen(s);
 	const int x = length;
-	char copy[length];
+	char copy[x];
 	int i;
 	int j = 0;
 
