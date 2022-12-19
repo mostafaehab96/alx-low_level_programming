@@ -13,7 +13,10 @@ void rev_string(char *s)
 	int i;
 	int j = 0;
 
-	copy = strcpy(copy, s);
+	for (i = 0; i < length; i++)
+	{
+		copy[i] = s[i];
+	}
 
 	for (i = length - 1; i >= 0; i--)
 	{
