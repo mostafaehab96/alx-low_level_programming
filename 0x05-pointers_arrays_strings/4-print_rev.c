@@ -7,10 +7,12 @@
 
 void print_rev(char *s)
 {
+	char *tmp = s;
+
 	if (s[0] == '\0')
 		return;
-
-	print_rev(++s);
+	tmp++;
+	print_rev(tmp);
 	_putchar(s[0]);
 }
 
