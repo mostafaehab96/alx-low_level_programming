@@ -24,7 +24,7 @@ int _atoi(char *s)
 		else if (isdigit(s[i]))
 		{
 			number_start = 1;
-			result = result * 10 + (s[i] - '0');
+			result = result * 10 + ((s[i] - '0') * negative);
 		}
 		else
 		{
