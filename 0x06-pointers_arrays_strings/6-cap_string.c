@@ -3,7 +3,6 @@
 
 #define True 1
 #define False 0
-typedef int bool;
 
 /**
  * check_existance - check if charcter c exist in string s
@@ -12,7 +11,7 @@ typedef int bool;
  * Return: true if it's exitst false otherwise
  */
 
-bool check_existance(char c, char *s)
+int check_existance(char c, char *s)
 {
 	int i = 0;
 
@@ -31,7 +30,8 @@ bool check_existance(char c, char *s)
  * @c: character to check
  * Return: true if it is, false otherwise
  */
-bool is_splitter(char c)
+
+int is_splitter(char c)
 {
 	return (check_existance(c, " \n\t,.;!?\"(){}"));
 }
@@ -45,7 +45,7 @@ bool is_splitter(char c)
 char *cap_string(char *s)
 {
 	int i = 0;
-	bool new_word = True;
+	int new_word = True;
 
 	while (s[i] != '\0')
 	{
