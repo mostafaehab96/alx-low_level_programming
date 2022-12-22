@@ -1,26 +1,6 @@
 #include "main.h"
 #include <ctype.h>
-
-/**
- * locate - locates character c in string s
- * @c: character to be located
- * @s: string to search in it
- * Return: the location of c in s
- */
-
-int locate(char c, char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		if (toupper(c) == s[i])
-			return (i);
-		i++;
-	}
-
-	return (-1);
-}
+#include <string.h>
 
 /**
  * leet - encode string to 1337
@@ -31,16 +11,18 @@ int locate(char c, char *s)
 char *leet(char *s)
 {
 	int i = 0;
-	int l;
+	char *l;
+	int index;
 	char letters[] = "AEOTL";
 	char code[] = "43071";
 
 	while (s[i] != '\0')
 	{
-		l = locate(s[i], letters);
-		if (l != -1)
+		l = strchr(letters, toupper(s[i]));
+		if (l != NULL)
 		{
-			s[i] = code[l];
+			index = 5 - strlen(l);
+			s[i] = code[index];
 		}
 		i++;
 	}
