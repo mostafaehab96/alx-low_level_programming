@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <ctype.h>
 
+/**
+ * print_buffer - prints a char buffer in some format
+ * @b: the buffer
+ * @size: size of the buffer
+ */
+
 void print_buffer(char *b, int size)
 {
 	int i = 0;
@@ -12,7 +18,7 @@ void print_buffer(char *b, int size)
 	{
 		/* printing position of first byte */
 		printf("%08x: ", i);
-		
+
 		/* printing hexadecimal content of the buffer 2 bytes at a time */
 		for (j = i; j < i + 10; j += 2)
 		{
@@ -24,7 +30,7 @@ void print_buffer(char *b, int size)
 				printf("%02x%02x ", b[j], b[j + 1]);
 
 		}
-		
+
 		for (j = i; j < i + 10 && j < size; j++)
 		{
 			if (isprint(b[j]))
