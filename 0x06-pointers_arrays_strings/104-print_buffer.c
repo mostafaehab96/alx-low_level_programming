@@ -12,7 +12,6 @@ void print_buffer(char *b, int size)
 {
 	int i = 0;
 	int j;
-	char *p = b;
 
 	while (i < size)
 	{
