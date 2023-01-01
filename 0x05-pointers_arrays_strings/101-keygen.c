@@ -10,19 +10,15 @@
 int main(void)
 {
 	long t = time(NULL);
-	char pass[4];
 	int r;
 	int i;
 
 	srand((unsigned int) t);
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 9; i++)
 	{
 		r = rand() % 10;
-		pass[i] = r + '0';
+		printf("%i", r % 10);
 	}
-	pass[i] = '\0';
-
-	printf("%s\n", pass);
 
 	return (0);
 }
