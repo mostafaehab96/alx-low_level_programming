@@ -15,7 +15,7 @@ int main(void)
 	char printable_chars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/,.-+=~`<>:";
 
 	srand((unsigned int) t);
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 12; i++)
 	{
 		r = rand() % (sizeof(printable_chars) - 1);
 		printf("%c", printable_chars[r]);
