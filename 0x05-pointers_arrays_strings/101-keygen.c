@@ -22,7 +22,7 @@ int main(void)
 	}
 	pass[i] = '\0';
 
-	printf("%s", pass);
+	printf("%s\n", pass);
 
 	return (0);
 }
