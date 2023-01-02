@@ -15,6 +15,10 @@ char *_strstr(char *haystack, char *needle)
 	int j = 0;
 	int found = 0;
 	int ndl_len = strlen(needle);
+	int hay_len = strlen(haystack);
+
+	if (hay_len < ndl_len)
+		return (NULL);
 
 	if (ndl_len == 0)
 		return (haystack);
