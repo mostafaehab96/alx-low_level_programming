@@ -16,6 +16,9 @@ char *_strstr(char *haystack, char *needle)
 	int found = 0;
 	int ndl_len = strlen(needle);
 
+	if (ndl_len == 0)
+		return (haystack);
+
 	while (haystack[i] != '\0')
 	{
 		if (haystack[i] == needle[0])
