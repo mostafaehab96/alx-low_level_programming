@@ -1,0 +1,41 @@
+#include "main.h"
+#include <string.h>
+
+/**
+ * _strstr - searches in haystack for the first occcurence of needle
+ * @haystack: the string to be searched in
+ * @needle: the string to be searched for
+ * Return: the a substring of haystack that begins with needle
+ * if it was found or NULL otherwise
+ */
+
+char *_strstr(char *haystack, char *needle)
+{
+	int i = 0;
+	int j = 0;
+	int found = 0;
+	int ndl_len = strlen(needle);
+
+	while (haystack[i] != '\0')
+	{
+		if (haystack[i] == needle[0])
+		{
+			found = 1;
+			for (j = i + 1; j < ndl_len; j++)
+			{
+				if (haystack[j] != needle[j])
+				{
+					found = 0;
+					break;
+				}
+			}
+
+			if (found)
+				return (&haystack[i]);
+			i += ndl_len;
+		}
+		i++;
+	}
+
+	return (NULL);
+}
