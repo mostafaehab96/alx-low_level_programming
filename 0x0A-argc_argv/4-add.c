@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	for (i = 1; i < argc; i++)
 	{
 		n = atoi(argv[i]);
-		if (n == 0 && !is_all_digit(argv[i]))
+		if (!is_all_digit(argv[i]))
 		{
 			printf("Error\n");
 			return (1);
