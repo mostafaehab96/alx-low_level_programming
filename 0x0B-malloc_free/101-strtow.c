@@ -72,7 +72,7 @@ char **strtow(char *str)
 	char **words = (char **) malloc((words_count + 1) * sizeof(char *));
 	char *word;
 
-	if (words == NULL || str[0] == '\0' || strcmp(" ", str) == 0 || str == NULL)
+	if (words == NULL || str[0] == '\0' || (strcmp(" ", str) == 0) || str == NULL)
 		return (NULL);
 
 	for (i = 0; i < (int) strlen(str); i++)
