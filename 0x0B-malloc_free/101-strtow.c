@@ -72,10 +72,10 @@ char **strtow(char *str)
 	char **words = (char **) malloc((words_count + 1) * sizeof(char *));
 	char *word;
 
-	if (words == NULL || str[0] == '\0' ||
-			(strlen(str) == 1 && str[0] == ' ') || str == NULL)
+	if (words == NULL || str[0] == '\0' || str == NULL)
 		return (NULL);
-
+	if (strlen(str) == 1 && str[0] == ' ')
+		return (NULL);
 	for (i = 0;  str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
