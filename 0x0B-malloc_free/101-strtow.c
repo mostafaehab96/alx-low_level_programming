@@ -40,7 +40,7 @@ char *new_word(char *s)
 int count_words(char *s)
 {
 	int i;
-	int word_started;
+	int word_started = 0;
 	int count = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -72,9 +72,7 @@ char **strtow(char *str)
 	char **words = (char **) malloc((words_count + 1) * sizeof(char *));
 	char *word;
 
-	if (words == NULL || str[0] == '\0' || str == NULL)
-		return (NULL);
-	if (strlen(str) == 1 && str[0] == ' ')
+	if (words == NULL || words_count == 0 || str == NULL)
 		return (NULL);
 	for (i = 0;  str[i] != '\0'; i++)
 	{
