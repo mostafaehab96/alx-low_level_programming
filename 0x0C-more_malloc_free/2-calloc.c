@@ -11,12 +11,13 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	unsigned int i;
 	char *memory = malloc(size * nmemb);
 
 	if (size == 0 || nmemb == 0 || memory == NULL)
 		return (NULL);
-
-	memory = (char *) memset(memory, 0, nmemb * size);
+	for (i = 0; i < nmemb * size; i++)
+		memory[i] = 0;
 
 	return (memory);
 }
