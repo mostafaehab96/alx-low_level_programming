@@ -3,6 +3,46 @@
 #include <stdarg.h>
 
 /**
+ * print_arg - takes a variadic list of argument and print the next argument
+ * @args: the list of arguments
+ * @type: a character representig the type of the argument
+ * Return: 1 if a valid type passed, -1 otherwise
+ */
+
+int print_arg(va_list *args, char type)
+{
+	int c;
+	float f;
+	int num;
+	char *string;
+
+	switch (type)
+	{
+		case 'c':
+			c = va_arg(*args, int);
+			printf("%c", c);
+			return (1);
+		case 'i':
+			num = va_arg(*args, int);
+			printf("%i", num);
+			return (1);
+		case 'f':
+			f = (float) va_arg(*args, double);
+			printf("%f", f);
+			return (1);
+		case 's':
+			string = va_arg(*args, char*);
+			if (string == NULL)
+				printf("(nil)");
+			else
+				printf("%s", string);
+			return (1);
+		default:
+			return (-1);
+	}
+}
+
+/**
  * print_all - prints everything passed to it
  * @format: the format of every argument passed to the fuction
  * c: char, s: string, f: float, i: integer
@@ -12,10 +52,6 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	char *string;
-	int c;
-	int num;
-	float f;
 	va_list args;
 	int r;
 
@@ -28,32 +64,7 @@ void print_all(const char * const format, ...)
 
 	while (format[i] != '\0')
 	{
-		switch (format[i])
-		{
-			case 'c':
-				c = va_arg(args, int);
-				r = printf("%c", c);
-				break;
-			case 'i':
-				num = va_arg(args, int);
-				r = printf("%i", num);
-				break;
-			case 'f':
-				f = (float) va_arg(args, double);
-				r = printf("%f", f);
-				break;
-			case 's':
-				string = va_arg(args, char*);
-				if (string == NULL)
-					r = printf("(nil)");
-				else
-					r = printf("%s", string);
-				break;
-			default:
-				r = -1;
-				break;
-		}
-
+		r = print_arg(&args, format[i]);
 		if (r > 0 && format[i + 1] != '\0')
 			printf(", ");
 		i++;
