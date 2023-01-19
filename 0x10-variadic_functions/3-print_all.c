@@ -32,6 +32,7 @@ int print_arg(va_list *args, char type)
 			return (1);
 		case 's':
 			string = va_arg(*args, char*);
+			string = string == NULL ? "(nil)" : string;
 			printf("%s", string);
 			return (1);
 		default:
