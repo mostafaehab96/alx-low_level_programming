@@ -10,7 +10,18 @@
 
 char *_strpbrk(char *s, char *accept)
 {
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (strcontain(accept, s[i]) != 0)
+			return (&s[i]);
+	}
+
+	if (strcontain(accept, s[i]) != 0)
+		return (&s[i]);
 
 	return (NULL);
+
 }
 
