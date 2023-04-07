@@ -16,9 +16,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !value)
 		return (0);
 
-	if (strlen(value) == 0)
-		return (0);
-
 	new = malloc(sizeof(hash_node_t));
 	new->key = (char *)key;
 	new->value = strdup(value);
