@@ -9,9 +9,9 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new, *tmp;
+	hash_node_t *new = NULL, *tmp = NULL;
 	unsigned long int index;
-	hash_node_t **arr;
+	hash_node_t **arr = NULL;
 
 	if (!ht || !value || !key || strlen(key) == 0)
 		return (0);
@@ -38,6 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(tmp->value);
 			tmp->value = strdup(value);
+			free(new->key);
 			free(new->value);
 			free(new);
 		}
