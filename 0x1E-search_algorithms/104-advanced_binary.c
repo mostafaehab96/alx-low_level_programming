@@ -42,7 +42,7 @@ int binary_recursion(int *array, size_t l, size_t r, int value)
 	else if (array[m] < value)
 		return (binary_recursion(array, m + 1, r, value));
 	else if (array[m] > value)
-		return (binary_recursion(array, l, m - 1, value));
+		return (binary_recursion(array, l, m, value));
 	else
 		return (m);
 }
